@@ -11,18 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sellables', function (Blueprint $table) {
+        Schema::create('allergens', function (Blueprint $table) {
             $table->id();
 
             $table->string("name");
-            $table->string("slug")->unique();
-            $table->text("description")->nullable();
-            $table->decimal("price", 6, 2);
-            $table->string("image")->nullable();
-            $table->boolean("is_visible")->default(true);
-            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
+            $table->text("description");
             
-
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sellables');
+        Schema::dropIfExists('allergens');
     }
 };

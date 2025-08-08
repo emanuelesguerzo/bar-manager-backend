@@ -25,7 +25,8 @@ return new class extends Migration
             $table->bigInteger("unit_size_g")->nullable();
             $table->string("image")->nullable();
             $table->foreignId("supplier_id")->nullable()->constrained()->onDelete("set null");
-
+            $table->unsignedInteger("stock_alert_threshold")->default(3);
+            
             $table->timestamps();
         });
     }

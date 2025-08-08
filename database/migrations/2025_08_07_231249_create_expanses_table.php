@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sellables', function (Blueprint $table) {
+        Schema::create('expanses', function (Blueprint $table) {
             $table->id();
 
-            $table->string("name");
-            $table->string("slug")->unique();
+            $table->foreignId("supplier_id")->nullable()->constrained()->onDelete("set null");
+            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null");
+            $table->string("title");
+            $table->decimal("amount", 6, 2);
+            $table->date("date")->nullable();
             $table->text("description")->nullable();
-            $table->decimal("price", 6, 2);
-            $table->string("image")->nullable();
-            $table->boolean("is_visible")->default(true);
-            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
-            
+            $table->string("category");
 
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sellables');
+        Schema::dropIfExists('expanses');
     }
 };
