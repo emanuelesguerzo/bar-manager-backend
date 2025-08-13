@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Expanse;
+use App\Http\Controllers\Controller;
+use App\Models\PurchaseOrderItem;
 use Illuminate\Http\Request;
 
-class ExpanseController extends Controller
+class PurchaseOrderItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class ExpanseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Expanse $expanse)
+    public function show(PurchaseOrderItem $purchaseOrderItem)
     {
         //
     }
@@ -42,7 +43,7 @@ class ExpanseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Expanse $expanse)
+    public function edit(PurchaseOrderItem $purchaseOrderItem)
     {
         //
     }
@@ -50,7 +51,7 @@ class ExpanseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Expanse $expanse)
+    public function update(Request $request, PurchaseOrderItem $purchaseOrderItem)
     {
         //
     }
@@ -58,7 +59,7 @@ class ExpanseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Expanse $expanse)
+    public function destroy(PurchaseOrderItem $purchaseOrderItem)
     {
         //
     }

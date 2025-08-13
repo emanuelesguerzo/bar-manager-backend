@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create("products", function (Blueprint $table) {
             $table->id();
 
             $table->string("name");
-            $table->string('slug')->unique();
+            $table->string("slug")->unique();
             $table->string("brand")->nullable();
-            $table->decimal("price", 6, 2);
-            $table->bigInteger("units_in_stock");
-            $table->bigInteger("stock_ml")->nullable();
-            $table->bigInteger("stock_g")->nullable();
-            $table->bigInteger("unit_size_ml")->nullable();
-            $table->bigInteger("unit_size_g")->nullable();
+            $table->decimal("price", 8, 2);
+            $table->unsignedInteger("unit_size_ml")->nullable();
+            $table->unsignedInteger("unit_size_g")->nullable();
             $table->string("image")->nullable();
             $table->foreignId("supplier_id")->nullable()->constrained()->onDelete("set null");
             $table->unsignedInteger("stock_alert_threshold")->default(3);
@@ -36,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists("products");
     }
 };

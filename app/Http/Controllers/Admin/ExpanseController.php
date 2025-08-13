@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Allergen;
+use App\Http\Controllers\Controller;
+use App\Models\Expanse;
 use Illuminate\Http\Request;
 
-class AllergenController extends Controller
+class ExpanseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class AllergenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Allergen $allergen)
+    public function show(Expanse $expanse)
     {
         //
     }
@@ -42,7 +43,7 @@ class AllergenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Allergen $allergen)
+    public function edit(Expanse $expanse)
     {
         //
     }
@@ -50,7 +51,7 @@ class AllergenController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Allergen $allergen)
+    public function update(Request $request, Expanse $expanse)
     {
         //
     }
@@ -58,7 +59,7 @@ class AllergenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Allergen $allergen)
+    public function destroy(Expanse $expanse)
     {
         //
     }

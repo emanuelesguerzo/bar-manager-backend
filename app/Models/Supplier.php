@@ -6,5 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplier extends Model
 {
-    //
+    
+    protected $fillable = [
+        "name",
+        "slug",
+        "email",
+        "phone",
+    ];
+
+    public function getRouteKeyName() 
+    {
+        return "slug";
+    }
+
+    public function products() {
+        return $this->hasMany(Product::class);
+    }
 }

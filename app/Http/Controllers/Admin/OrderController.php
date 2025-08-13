@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Sellable;
+use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class SellableController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class SellableController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Sellable $sellable)
+    public function show(Order $order)
     {
         //
     }
@@ -42,7 +43,7 @@ class SellableController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Sellable $sellable)
+    public function edit(Order $order)
     {
         //
     }
@@ -50,7 +51,7 @@ class SellableController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Sellable $sellable)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -58,7 +59,7 @@ class SellableController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Sellable $sellable)
+    public function destroy(Order $order)
     {
         //
     }
