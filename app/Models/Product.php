@@ -110,6 +110,11 @@ class Product extends Model
             ->withTimestamps();
     }
 
+    public function batches()
+    {
+        return $this->hasMany(ProductBatch::class);
+    }
+
     public function getUnitSizeAttribute()
     {
         return $this->unit_size_ml

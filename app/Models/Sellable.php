@@ -19,9 +19,9 @@ class Sellable extends Model
     ];
 
     protected $hidden = [
-        "pivot", 
+        "pivot",
         "category_id",
-        "created_at", 
+        "created_at",
         "updated_at"
     ];
 
@@ -30,7 +30,7 @@ class Sellable extends Model
         "price" => "decimal:2",
     ];
 
-    public function getRouteKeyName() 
+    public function getRouteKeyName()
     {
         return "slug";
     }
@@ -47,7 +47,7 @@ class Sellable extends Model
             ->withTimestamps();
     }
 
-    public function orders() 
+    public function orders()
     {
         return $this->belongsToMany(Order::class)
             ->withPivot("quantity")
@@ -58,4 +58,5 @@ class Sellable extends Model
     {
         return $this->belongsToMany(Allergen::class);
     }
+
 }
