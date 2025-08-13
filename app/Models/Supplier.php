@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplier extends Model
 {
-    
+
     protected $fillable = [
         "name",
         "slug",
@@ -14,12 +14,20 @@ class Supplier extends Model
         "phone",
     ];
 
-    public function getRouteKeyName() 
+    public function getRouteKeyName()
     {
         return "slug";
     }
 
-    public function products() {
+    // Products Relation
+    public function products()
+    {
         return $this->hasMany(Product::class);
+    }
+
+    // Expenses Relation
+    public function expanses()
+    {
+        return $this->hasMany(Expense::class);
     }
 }
